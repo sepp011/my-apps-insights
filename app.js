@@ -10,7 +10,11 @@ appInsights.setup(process.env. APPLICATIONINSIGHTS_CONNECTION_STRING) // setting
     .setUseDiskRetryCaching(true)
     .setSendLiveMetrics(true)  // this enables live metrics
     .setDistributedTracingMode(appInsights.DistributedTracingModes.AI)
-    .start();
+
+// configuring app insights sampling
+appInsights.defaultClient.config.samplingPercentage = 50;
+
+appInsights.start();
 
 var createError = require('http-errors');
 var express = require('express');
