@@ -1,6 +1,6 @@
 let process = require('process')
 let appInsights = require("applicationinsights") (// importing) 
-appInsights.setup(process.env. APPLICATIONINSIGHTS_CONNECTION_STRING) (// setting up the instrumentation) 
+appInsights.setup(process.env. APPLICATIONINSIGHTS_CONNECTION_STRING) // setting up the instrumentation
     .setAutoDependencyCorrelation(true)
     .setAutoCollectRequests(true)
     .setAutoCollectPerformance(true, true)
